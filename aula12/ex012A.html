@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee break!!</title>
+    <style>
+        body{
+            background-color: rgb(184, 174, 184);
+            font: normal 16pt Arial;
+        }
+        input#intime{
+            font-size: 20px;
+            border-radius: 5px;
+        }
+        input#btnver{
+            font-size: 20px;
+            width: 110px;
+            border-radius: 5px;
+            background-color: seagreen;
+        }
+    </style>
+</head>
+<body>
+    <h1>What time is it, please?</h1>
+    Pick the time: <input type="time" name="" id="intime">
+    <input type="button" value="Verify" id="btnver">
+    <div id="res">
+
+    </div>
+    <script>
+
+        const INTIME = document.querySelector('input#intime')
+        const BTNVER = document.querySelector('input#btnver')
+        const DIVRES = document.querySelector('div#res')
+        BTNVER.addEventListener('click', verify)
+
+        function verify(){
+            let time = INTIME.value
+            let hour = Number(time.split(':')[0])
+            
+            DIVRES.innerHTML = `<p>It is <strong>${time}</strong> now</p>`
+
+            if(hour < 5){
+                DIVRES.innerHTML += '<p>Have a good day</p>'
+            }else if(hour < 12){
+                DIVRES.innerHTML += '<p>Good morning</p>'
+            }else if(hour < 18){
+                DIVRES.innerHTML += '<p>Good afternoon</p>'
+            }else{
+                DIVRES.innerHTML += '<p>Good evening</p>'
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crunching numbers</title>
+    <style>
+        body{
+            font: normal 18pt Arial;
+        }
+        input{
+            font: normal 18pt Arial;
+            width: 100px;
+        }
+        div#res{
+            margin-top: 25px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Adding numbers</h1>
+    <input type="number" name="txtn1" id="txtn1"> +
+    <input type="number" name="txtn2" id="txtn2">
+    <input type="button" value="Sum" id='btnSum' onclick="clicked()">
+    <div id='res'>0</div>
+    <script>
+
+        function clicked(){
+            var inBtnSum = document.querySelector('input#btnSum')
+            var inTxtFld1 = Number(document.querySelector('input#txtn1').value)
+            var inTxtFld2 = Number(document.querySelector('input#txtn2').value)
+            var result = document.getElementById('res')
+            var summation = inTxtFld1 + inTxtFld2
+            
+            result.innerHTML = `The summation of ${inTxtFld1} and ${inTxtFld2} is <strong>${summation}</strong>`
+        }
+
+    </script>
+</body>
+</html>

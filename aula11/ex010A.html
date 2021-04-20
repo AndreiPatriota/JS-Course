@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Which Country</title>
+</head>
+<body>
+    <h1>Where are you from?</h1>
+    Which country are you from: <input type="text" name="txtcountry" id="txtcountry">?
+    <input type="button" value="Verify" id="btnver">
+    <div id="res">
+
+    </div>
+    <script>
+
+        const BTNVER = document.querySelector('input#btnver')
+        const TXTIN = document.querySelector('input#txtcountry')
+        const DIVRES = document.querySelector('div#res')
+        BTNVER.addEventListener('click', verify)
+
+        function verify(){
+            let country = TXTIN.value
+
+            DIVRES.innerHTML = `<p>Living in <strong>${country}</strong></p>`
+            if(country == 'Brazil'){
+                DIVRES.innerHTML += '<p>So, it means you are a <strong>Brasilean</strong></p>'
+            }else{
+                DIVRES.innerHTML += '<p>So, it means you are a <strong>Foreigner</strong></p>'
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Department</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h1>Ticket System</h1>
+    Vehicle speed: <input type="number" name="txtvel" id="txtvel"> Km/h
+    <input type="button" value="Verify" id="btnver">
+    <div id="res">
+
+    </div>
+    <script>
+
+        const TXTBOX = document.querySelector('input#txtvel')
+        const BTNVER = document.querySelector('input#btnver')
+        const DIVRES = document.querySelector('div#res')
+        BTNVER.addEventListener('click', calculate)
+
+        function calculate(){
+            let vel = Number(TXTBOX.value)
+
+            DIVRES.innerHTML = `<p>Your current speed is <strong>${vel}</strong>Km/h</p>`
+            if(vel > 60){
+                DIVRES.innerHTML += '<p><strong>Congrats!</strong> You got a ticket for sucking at driving</p>'
+            }
+            DIVRES.innerHTML += '<p>Always fasten the seat belt</p>'
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My 3rd program....</title>
+    <style>
+        body{
+            background-color: rgb(107, 107, 133);
+            color: white; /*CSS comment*/
+            font: normal 20pt Arial;
+        }
+        h1{
+            color: rgb(182, 46, 22);
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello World!!!</h1> <!--HTML commet-->
+    <p>I have already gotten rid of the curse!!!</p>
+    <script>
+
+        //window.prompt returns a string
+        var n1 = Number(window.prompt('Insert a number: '))//Converts string->number
+        var n2 = Number(window.prompt('Insert another number: '))//Converts string->number
+        var sum = n1 + n2
+        // number + number -> addition
+        // string + string -> concatenation
+        
+        //window.alert(String(n1) + ' + ' + n2 + ' = ' + String(sum))//Num->Str convertion optional
+        window.alert(`${n1} + ${n2} = ${sum}`)
+
+    </script>
+</body>
+</html>

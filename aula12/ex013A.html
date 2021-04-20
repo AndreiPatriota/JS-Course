@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Days of the Week</title>
+    <style>
+        input#btnver{
+            width: 120px;
+            font-size: 20px;
+            border-radius: 10px;
+        }
+        body{
+            font: normal 18pt Arial;
+        }
+        input#indate{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Do you know what day is today?</h1>
+    Insert the date: <input type="date" name="" id="indate">
+    <input type="button" value="Verify" id="btnver">
+    <div id="res">
+
+    </div>
+    <script>
+
+        const INDATE = document.querySelector('input#indate')
+        const BTNVER = document.querySelector('input#btnver')
+        const DIVRES = document.querySelector('div#res')
+        BTNVER.addEventListener('click', verify)
+
+        function verify(){
+            let sDate = INDATE.value
+            let date = new Date(INDATE.value)
+
+            let dayOfWeek = date.getDay()
+            let day = sDate.split('-')[2]
+            let month = Number(sDate.split('-')[1])
+            let year = Number(sDate.split('-')[0])
+            let order = 'th'
+            //let dayOfWeek = date.getDate
+            switch(dayOfWeek){
+                case 0: dayOfWeek = 'Monday'
+                            break
+                case 1: dayOfWeek = 'Tuesday'
+                            break
+                case 2: dayOfWeek = 'Wednesday'
+                            break
+                case 3: dayOfWeek = 'Thursday'
+                            break
+                case 4: dayOfWeek = 'Friday'
+                            break
+                case 5: dayOfWeek = 'Saturday'
+                            break
+                case 6: dayOfWeek = 'Sunday'
+                            break
+                default: dayOfWeek = 'Invalid'
+                         break
+            }
+            switch(month){
+                case 1: month = 'January'; break;
+                case 2: month = 'February'; break;
+                case 3: month = 'March'; break;
+                case 4: month = 'April'; break;
+                case 5: month = 'May'; break;
+                case 6: month = 'June'; break;
+                case 7: month = 'July'; break;
+                case 8: month = 'August'; break;
+                case 9: month = 'September'; break;
+                case 10: month = 'October'; break;
+                case 11: month = 'November'; break;
+                case 12: month = 'December'; break;
+                default: month = 'Invalid'; break;
+            }
+            switch(day.charAt(1)){
+                case '1': order = 'st'; break;
+                case '2': order = 'nd'; break;
+                case '3': order = 'rd'; break;
+                default: order = 'th'; break;
+            }
+
+            DIVRES.innerHTML = `<p>The selected date is ${month} the ${day}${order} of ${year}, and it is a ${dayOfWeek}</p>`
+        }
+
+    </script>
+</body>
+</html>

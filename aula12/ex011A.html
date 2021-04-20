@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting System</title>
+    <style>
+        body{
+            background-color: rgb(49, 49, 97);
+            color: white;
+            font: normal 18pt Arial;
+        }
+        input#btnver{
+            font-size: medium;
+            width: 100px;
+            height: 50px;
+            background-color: coral;
+            box-shadow: coral;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Do you now if you are legally allowed to vote?</h1>
+    Tell your date of birth: <input type="date" name="" id="indate">
+    <input type="button" value="Verify" id="btnver">
+    <div id="res">
+
+    </div>
+    <script>
+
+        const INDATE = document.querySelector('input#indate') 
+        const BTNVER = document.querySelector('input#btnver')
+        const DIVRES = document.querySelector('div#res')
+        BTNVER.addEventListener('click', verify)
+
+        function verify(){
+            let birthDate = new Date(INDATE.value)
+            let today = new Date()
+            let age = Math.trunc((today - birthDate)/31557600000)
+
+            DIVRES.innerHTML = `<p>You are <strong>${age}</strong> years old<p>`
+            if(age < 16){
+                DIVRES.innerHTML += '<p>According to the law, you are <strong>not allowed to vote</strong></p>'    
+            }
+            else if(age < 18 || age > 65){
+                DIVRES.innerHTML += '<p>According to the law, voting <strong>is not mandatory</strong> to you</p>'
+            }
+            else{
+                DIVRES.innerHTML += '<p>According to the law, voting <strong>is mandatory</strong> to you<p>'
+            }
+        }
+        
+    </script>
+</body>
+</html>
