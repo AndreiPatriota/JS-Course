@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,14 +8,15 @@
     <title>Exercise Model</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Multiplication Table</h1>
     </header>
     <section>
         <div>
-            <p>Type a number: <input type="number" name="" id="innum"> 
-            <input type="button" value="Generate" id="btngen" onclick="generate()">
+            <p>Type a number: <input type="number" name="" id="innum">
+                <input type="button" value="Generate" id="btngen" onclick="generate()">
             </p>
         </div>
         <div id="container">
@@ -22,7 +24,7 @@
                 <select name="results" id="results" size="10" onchange="getVal()">
                     <option value="init">Type a number above</option>
                 </select>
-            </div> 
+            </div>
             <div id="sel"></div>
         </div>
     </section>
@@ -31,4 +33,5 @@
     </footer>
     <script src="script.js"></script>
 </body>
+
 </html>
